@@ -17,11 +17,12 @@ export default function Navbar() {
   };
 
   const navPages: navTabs[] = [
-    { text: "Home", route: "/", icon: "house-door-fill" },
-    { text: "About", route: "/about", icon: "file-person-fill" },
-    { text: "Resources", route: "/resources", icon: "briefcase-fill" },
-    { text: "Statistics", route: "/statistics", icon: "archive-fill" },
-    { text: "Contact", route: "/contact", icon: "telephone-fill" },
+    { text: "Home", route: "/", icon: "bi-house-door-fill" },
+    { text: "About", route: "/about", icon: "bi-file-person-fill" },
+    { text: "Resources", route: "/resources", icon: "bi-briefcase-fill" },
+    { text: "Statistics", route: "/statistics", icon: "bi-archive-fill" },
+    { text: "Support Us!", route: "/support", icon: "bi-archive-fill" },
+    { text: "Contact", route: "/contact", icon: "bi-telephone-fill" },
   ];
 
   return (
@@ -29,11 +30,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <Link href="/" className="text-white">
-                Project
-              </Link>
-            </div>
+            <div className="flex-shrink-0"></div>
           </div>
           <div className="hidden md:block">
             <div className="ml-4 flex items-center space-x-4">
@@ -101,7 +98,7 @@ export default function Navbar() {
                 className="text-white block hover:bg-red-700 rounded-lg p-2 transition ease-in duration-200"
               >
                 <div className="flex gap-1">
-                  <i className={`bi bi-${item.icon}`}></i>
+                  <i className={`bi ${item.icon}`}></i>
                   {item.text}
                 </div>
               </Link>
