@@ -29,7 +29,7 @@ export default function Contact() {
             required
           />
           <button
-            className="bg-red-600 p-3 rounded-lg text-slate-100"
+            className="bg-red-600 hover:scale-110 transition ease-in duration-100 transform p-3 rounded-lg text-slate-100"
             type="submit"
           >
             Submit
