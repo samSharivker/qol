@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div className="text-center flex flex-col items-center m-5">
       <div className="text-center flex lg:flex-row flex-col-reverse items-center gap-5 max-w-7xl p-10 bg-slate-100">
-        <form className="rounded-lg flex flex-col lg:items-start items-center gap-3 p-10 bg-slate-200 w-full">
+        <form className="shadow-md rounded-lg flex flex-col lg:items-start items-center gap-3 p-10 bg-slate-200 w-full">
           <input
             className="min-w-96 text-xl p-2 rounded-lg focus:outline-none focus:ring-0"
             type="text"
@@ -35,7 +35,7 @@ export default function Contact() {
             Submit
           </button>
         </form>
-        <h1 className="text-5xl flex-wrap">
+        <h1 className="text-5xl flex-wrap kalam-bold">
           If you have any comments or questions please feel free to reach out to
           us. Your voice matters!
         </h1>
