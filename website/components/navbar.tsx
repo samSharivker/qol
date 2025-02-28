@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from "next-view-transitions";
 import React, { useState } from "react";
 
 interface navTabs {
@@ -14,6 +15,10 @@ export default function Navbar() {
 
   const toggleNavbar = (): void => {
     setisClick(!isClick);
+  };
+
+  const closeNavbar = (): void => {
+    setisClick(false);
   };
 
   const navPages: navTabs[] = [
@@ -96,6 +101,7 @@ export default function Navbar() {
                 key={item.route}
                 href={item.route}
                 className="font-bold text-black block hover:bg-slate-100 rounded-lg p-2 transition ease-in duration-200"
+                onClick={closeNavbar}
               >
                 <div className="flex gap-1">
                   <i className={`bi ${item.icon}`}></i>
