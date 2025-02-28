@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import rtr from "@/public/rtr.png";
+import rtr from "@/public/img/rtr.png";
+import qrCode from "@/public/img/qrcode.png";
 
 export default function Support() {
   return (
@@ -35,6 +36,11 @@ export default function Support() {
           </Link>
         </div>
       </div>
+      <Image
+        className="max-w-80 lg:max-w-2xl rounded-lg m-10"
+        src={qrCode}
+        alt="Rosie the Riveter"
+      />
     </div>
   );
 }
