@@ -10,7 +10,7 @@ export default function Support() {
       <div className="max-w-7xl justify-items-center flex lg:flex-row-reverse flex-col-reverse items-center gap-5 bg-slate-100 p-10">
         <div>
           <Image
-            className="h-auto lg:max-w-80 rounded-lg"
+            className="h-auto max-w-72 sm:max-w-80 rounded-lg"
             src={rtr}
             alt="Rosie the Riveter"
           />
