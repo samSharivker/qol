@@ -23,9 +23,13 @@ export default function Navbar() {
   const navPages: navTabs[] = [
     { text: "Home", route: "/", icon: "bi-house-door-fill" },
     { text: "About", route: "/about", icon: "bi-file-person-fill" },
-    { text: "Resources", route: "/resources", icon: "bi-briefcase-fill" },
-    { text: "Survey Results", route: "/statistics", icon: "bi-archive-fill" },
-    { text: "Support Us!", route: "/support", icon: "bi-archive-fill" },
+    { text: "Resources", route: "/resources", icon: "bi-book-fill" },
+    {
+      text: "Survey Results",
+      route: "/statistics",
+      icon: "bi-clipboard-data-fill",
+    },
+    { text: "Support Us!", route: "/support", icon: "bi-megaphone-fill" },
     { text: "Contact", route: "/contact", icon: "bi-telephone-fill" },
   ];
 
@@ -45,7 +49,7 @@ export default function Navbar() {
                   className="font-bold text-black hover:bg-slate-100 rounded-lg p-2 transition ease-in duration-200 transform hover:scale-110"
                 >
                   <div className="flex gap-1">
-                    <i className={`bi bi-${item.icon}`}></i>
+                    <i className={item.icon}></i>
                     {item.text}
                   </div>
                 </Link>
@@ -103,7 +107,7 @@ export default function Navbar() {
                 onClick={closeNavbar}
               >
                 <div className="flex gap-1">
-                  <i className={`bi ${item.icon}`}></i>
+                  <i className={item.icon}></i>
                   {item.text}
                 </div>
               </Link>
