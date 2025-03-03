@@ -19,15 +19,15 @@ export default function About() {
   return (
     <div className="text-center flex flex-col items-center m-5">
       <div className="text-center flex flex-col items-center gap-7 p-10 w-full bg-white/80">
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 shadow-lg p-32">
           <p className="text-5xl kalam-bold">Mission</p>
           <p className="text-xl">{content.mission}</p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-2">
+        <div className="flex flex-col items-center justify-center gap-2 shadow-lg p-32">
           <p className="text-5xl kalam-bold">About</p>
           <p className="text-xl">{content.about}</p>
         </div>
-        <div className="flex flex-col items-center justify-center gap-5">
+        <div className="flex flex-col items-center justify-center gap-5 shadow-lg p-32">
           <p className="text-5xl kalam-bold">Background</p>
           <p className="text-justify leading-7">{content.p1}</p>
           <p className="text-justify leading-7">{content.p2}</p>
@@ -38,7 +38,7 @@ export default function About() {
           <p className="text-justify leading-7">{content.p7}</p>
           <p className="text-justify leading-7">{content.p8}</p>
         </div>
-        <div className="flex flex-col items-start justify-center gap-3">
+        <div className="flex flex-col items-start justify-center gap-3 shadow-lg p-32">
           <p className="text-2xl kalam-bold">References</p>
           <p className="text-sm text-start">
             Agrawal, N. (2024, October 15). Controlling blood sugar is crucial.
