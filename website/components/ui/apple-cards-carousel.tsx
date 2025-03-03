@@ -233,10 +233,12 @@ export const Card = ({
               >
                 {card.title}
               </motion.p>
-              <div className="py-10">{card.content}</div>
-              <Link href={card.href} target="_blank">
-                <p>View</p>
-              </Link>
+              <div className="py-10">
+                {card.content}
+                <Link href={card.href} target="_blank">
+                  <p>View</p>
+                </Link>
+              </div>
             </motion.div>
           </div>
         )}
