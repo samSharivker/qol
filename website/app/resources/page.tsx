@@ -9,33 +9,38 @@ export default function Resources() {
       title: "Plate Planner",
       category: "Source: NYCDOH",
       content:
-        "https://www.nyc.gov/assets/doh/downloads/pdf/csi/obesity-plate-planner-13.pdf",
+        "Nutrition plays a key role in preventing and managing diabetes. The New York City Department of Health has developed a meal planner to help residents make more thoughtful nutritional decisions.",
+      href: "https://www.nyc.gov/assets/doh/downloads/pdf/csi/obesity-plate-planner-13.pdf",
     },
     {
       src: "/img/cards/path.png",
       title: "Diabetes Roadmap",
       category: "Source: NYCDOH",
       content:
-        "https://www.nyc.gov/assets/doh/downloads/pdf/csi/diabetes-infographic.pdf",
+        "Are you curious if your lifestyle decisions put you on the path toward diabetes? The New York City Department of Health has created a roadmap to help residents assess whether their current lifestyle habits are harmful and may lead to developing diabetes.",
+      href: "https://www.nyc.gov/assets/doh/downloads/pdf/csi/diabetes-infographic.pdf",
     },
     {
       src: "/img/cards/info.png",
       title: "Diabetic Information",
       category: "Source: NYCDOH",
       content:
-        "https://www.nyc.gov/site/doh/health/health-topics/diabetes.page",
+        "The New York City Department of Health has provided extensive information regarding diabetes, including lifestyle habits and background information. This is a good general source of information.",
+      href: "https://www.nyc.gov/site/doh/health/health-topics/diabetes.page",
     },
     {
       src: "/img/cards/ada.png",
       title: "Diabetic Prevention",
       category: "Source: American Diabetes Association",
-      content: "https://diabetes.org/about-diabetes/diabetes-prevention",
+      content: "temp",
+      href: "https://diabetes.org/about-diabetes/diabetes-prevention",
     },
     {
       src: "/img/cards/who.png",
       title: "Diabetic Facts",
       category: "Source: World Health Organization",
-      content: "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+      content: "temp",
+      href: "https://www.who.int/news-room/fact-sheets/detail/diabetes",
     },
   ];
   return (
