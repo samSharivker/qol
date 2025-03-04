@@ -25,7 +25,7 @@ export default function Navbar() {
     { text: "About", route: "/about", icon: "bi-file-person-fill" },
     { text: "Resources", route: "/resources", icon: "bi-book-fill" },
     {
-      text: "Survey Results",
+      text: "Statistics",
       route: "/statistics",
       icon: "bi-clipboard-data-fill",
     },
