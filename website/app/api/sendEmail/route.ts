@@ -48,6 +48,9 @@ export async function POST(req: NextRequest) {
     const mailOptions = {
       from: email,
       to: process.env.GOOGLE_EMAIL as string,
+      cc: process.env.GOOGLE_CC_EMAILS
+        ? process.env.GOOGLE_CC_EMAILS.split(",")
+        : undefined,
       subject: "QOL | New Message from Website!",
       text: message,
       html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message}</p>`,
