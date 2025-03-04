@@ -10,26 +10,8 @@ export default function Contact() {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: `${firstName} ${lastName}`,
-          email,
-          message,
-        }),
-      });
 
-      const data = await response.json();
-      if (response.ok) {
-        alert("Message sent!");
-      } else {
-        alert(`Failed: ${data.error}`);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
+    alert("currently still in development!");
   };
 
   return (
