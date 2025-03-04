@@ -11,7 +11,31 @@ export default function Contact() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    alert("currently still in development!");
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`,
+          email,
+          message,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        alert(`Failed to send: ${data.error}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong.");
+    }
   };
 
   return (
