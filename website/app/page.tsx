@@ -23,14 +23,16 @@ export default function Home() {
           {content.h1}
         </p>
       </section>
-      <div className="relative flex flex-col md:flex-row gap-6 items-center justify-center p-10 bg-white bg-opacity-90 mt-10 z-10">
-        <p className="text-xl leading-relaxed shadow-md p-5">{content.p1}</p>
-        <div>
-          <Image
-            className="h-auto max-w-2xl rounded-lg"
-            src={hbg}
-            alt="Background"
-          />
+      <div className="relative p-10 bg-white bg-opacity-90 z-10 w-full">
+        <div className="flex flex-col md:flex-row gap-3 bg-red max-w-7xl items-center justify-center ">
+          <p className="text-2xl leading-relaxed shadow-md p-5">{content.p1}</p>
+          <div>
+            <Image
+              className="h-auto max-w-2xl rounded-lg"
+              src={hbg}
+              alt="Background"
+            />
+          </div>
         </div>
       </div>
     </div>

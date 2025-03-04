@@ -1,17 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+
+const SITE_KEY = process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY || "";
 
 export default function Contact() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA | null>(null);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    if (!recaptchaRef.current) {
+      alert("reCAPTCHA not loaded");
+      return;
+    }
+
+    setIsSubmitting(true);
+
     try {
+      const recaptchaToken = await recaptchaRef.current.executeAsync();
+      recaptchaRef.current.reset();
+
       const response = await fetch("/api/sendEmail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -19,6 +34,7 @@ export default function Contact() {
           name: `${firstName} ${lastName}`,
           email,
           message,
+          recaptchaToken,
         }),
       });
 
@@ -35,6 +51,8 @@ export default function Contact() {
     } catch (error) {
       console.error("Error:", error);
       alert("Something went wrong.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -50,9 +68,7 @@ export default function Contact() {
             type="text"
             placeholder="First Name"
             value={firstName}
-            onChange={(e) => {
-              setFirstName(e.target.value);
-            }}
+            onChange={(e) => setFirstName(e.target.value)}
             required
           />
           <input
@@ -60,9 +76,7 @@ export default function Contact() {
             type="text"
             placeholder="Last Name"
             value={lastName}
-            onChange={(e) => {
-              setLastName(e.target.value);
-            }}
+            onChange={(e) => setLastName(e.target.value)}
             required
           />
           <input
@@ -70,25 +84,23 @@ export default function Contact() {
             type="email"
             placeholder="Email"
             value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
           <textarea
             className="min-w-60 rounded-lg p-2 sm:min-w-96 h-60 resize-none focus:outline-none focus:ring-0"
             placeholder="Message"
             value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
+            onChange={(e) => setMessage(e.target.value)}
             required
           />
+          <ReCAPTCHA ref={recaptchaRef} sitekey={SITE_KEY} size="invisible" />
           <button
             className="bg-red-600 hover:scale-110 transition ease-in duration-100 transform p-3 rounded-lg text-slate-100"
             type="submit"
+            disabled={isSubmitting}
           >
-            Submit
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </form>
         <h1 className="sm:text-5xl text-3xl flex-wrap kalam-bold">

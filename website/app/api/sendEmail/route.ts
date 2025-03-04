@@ -4,15 +4,35 @@ import nodemailer from "nodemailer";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, message } = body as {
+    const { name, email, message, recaptchaToken } = body as {
       name: string;
       email: string;
       message: string;
+      recaptchaToken: string;
     };
 
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !recaptchaToken) {
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: "All fields and reCAPTCHA token are required" },
+        { status: 400 }
+      );
+    }
+
+    const recaptchaSecret = process.env.GOOGLE_SECRET_KEY;
+    const recaptchaResponse = await fetch(
+      "https://www.google.com/recaptcha/api/siteverify",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${recaptchaSecret}&response=${recaptchaToken}`,
+      }
+    );
+
+    const recaptchaData = await recaptchaResponse.json();
+
+    if (!recaptchaData.success || recaptchaData.score < 0.5) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed. Please try again." },
         { status: 400 }
       );
     }
@@ -40,14 +60,9 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    if (error instanceof Error) {
-      return NextResponse.json(
-        { error: `Failed to send email: ${error.message}` },
-        { status: 500 }
-      );
-    }
+    console.error("Error:", error);
     return NextResponse.json(
-      { error: "An unknown error occurred" },
+      { error: "Failed to send email. Please try again." },
       { status: 500 }
     );
   }
