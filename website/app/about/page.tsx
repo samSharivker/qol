@@ -3,7 +3,7 @@
 export default function About() {
   const content = {
     mission:
-      "Increase awareness on prediabeties to help keep future generations healty.",
+      "Increase awareness on pre-diabetes to help keep future generations healthy",
     about:
       "We are NYC public high school students participating in the Quality of Life Innovations proposal through the W!SE Foundation. Through research, we have seen how diabetes has become an epidemic across NYC, so we wish to spread awareness on this issue to help keep future generations healthier. This website is part of our implementation strategy and awareness campaign.",
     p1: "Researchers, including Postdoctoral Fellow Yi Yu at the Wuhan University of Science and Technology and psychiatrist Weitao Wan in the Department of Psychiatry at Tianyou Hospital, have defined prediabetes as a reversible condition marked by impaired fasting glucose levels between 6.1 to 6.9 mmol/L. These levels are abnormal but not high enough to be diagnosed as type two diabetes (which requires levels of 7.0 mmol/L or higher), providing a much-needed warning of an insulin-resistant body struggling to regulate glucose (Yu & Wan, 2024). To put this in perspective, an A1C level between 5.7% and 6.4% would qualify one’s blood sugar as prediabetic, while an A1C level of 6.5% or higher would be an indicative of diabetes.",
@@ -20,11 +20,11 @@ export default function About() {
     <div className="text-center flex flex-col items-center m-5">
       <div className="text-center flex flex-col items-center gap-7 p-10 w-full bg-slate-100">
         <div className="flex flex-col items-center justify-center gap-2 shadow-lg p-28">
-          <p className="text-5xl kalam-bold">Mission</p>
+          <p className="text-5xl kalam-bold">Mission:</p>
           <p className="text-xl">{content.mission}</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-2 shadow-lg p-28">
-          <p className="text-5xl kalam-bold">About</p>
+          <p className="text-5xl kalam-bold">About Our Team:</p>
           <p className="text-xl">{content.about}</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-5 shadow-lg p-28">

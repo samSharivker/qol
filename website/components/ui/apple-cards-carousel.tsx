@@ -236,7 +236,9 @@ export const Card = ({
               <div className="py-10">
                 {card.content}
                 <Link href={card.href} target="_blank">
-                  <p>View</p>
+                  <p className="underline text-blue-500">
+                    Click here to view resource!
+                  </p>
                 </Link>
               </div>
             </motion.div>
