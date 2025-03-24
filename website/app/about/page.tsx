@@ -49,16 +49,19 @@ export default function About() {
         {content.map((a, b) => (
           <div
             key={b}
-            className="flex flex-col items-start justify-center gap-3 shadow-lg p-28"
+            className="flex flex-col items-center justify-center gap-3 shadow-lg p-28 bg-slate-200"
           >
             {a.map((c, d) =>
               d == 0 ? (
-                <p key={d} className="text-5xl text-left kalam-bold underline">
+                <p
+                  key={d}
+                  className="text-5xl text-center kalam-bold underline"
+                >
                   {c}
                 </p>
               ) : (
-                <p key={d} className="text-xl text-left">
-                  {c}
+                <p key={d} className="text-xl text-center">
+                  - {c}
                 </p>
               )
             )}
