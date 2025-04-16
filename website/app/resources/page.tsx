@@ -45,14 +45,14 @@ export default function Resources() {
   ];
   return (
     <div className="flex flex-col items-center justify-center m-5 gap-10">
-      <div className="bg-slate-100 p-10 rounded-lg">
-        <div className="flex flex-col text-center items-center justify-center gap-1 sm:max-w-5xl bg-slate-200 p-10 shadow-lg rounded-lg">
-          <p className="text-2xl sm:text-5xl kalam-bold">Resources</p>
-          <p className="text-lg sm:text-2xl">
-            Each card below is a different diabetic resource. Click on the card
-            to view a description and hyperlink to view the actual resource.
-          </p>
-        </div>
+      <div className="max-w-4xl mx-auto mb-16 bg-white rounded-xl shadow-md p-8 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold text-red-700 mb-4">
+          Resources
+        </h1>
+        <p className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+          Each card below is a different diabetic resource. Click on a card to
+          view its description and follow the link to the full resource.
+        </p>
       </div>
       <div className="grid lg:grid-cols-2 grids-cols-1 lg:gap-20 gap-5">
         {data.map((card, i) => (

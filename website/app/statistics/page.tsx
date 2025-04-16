@@ -15,30 +15,36 @@ export default function Statistics() {
     p8: "The statistic that 45.5% of respondents cannot define hemoglobin A1c levels reveals a concerning gap in public understanding of a crucial diabetes management metric. This underscores the urgent need for improved health education to ensure individuals can better monitor and address their risk for diabetes and related conditions.",
     p9: '81 percent agree with the statement, "schools should provide more education on pre-diabetes and diabetes"? (our survey)',
     p10: "The overwhelming 81% agreement that schools should provide more education on prediabetes and diabetes reflects a strong public recognition of the need for early health literacy. This consensus highlights an opportunity to integrate diabetes awareness into school curriculam, potentially reducing future health risks through informed prevention and management.",
+    p11: "200 Surveys Distributed Throughout Brooklyn High Schools",
+    p12: "With BayRidge and Dyker Heights having a population of about 125,000 residents, this gives us a margin of error of 7%.",
   };
 
   return (
-    <div className="text-center flex flex-col items-center m-5">
-      <div className="text-center flex flex-col items-center gap-10 p-10 bg-slate-100 max-w-7xl">
-        <div className="shadow-lg p-10 bg-slate-200 rounded-lg">
-          <p className="italic font-bold text-lg">{content.p1}</p>
-          <p>{content.p2}</p>
-        </div>
-        <div className="shadow-lg p-10 bg-slate-200 rounded-lg">
-          <p className="italic font-bold text-lg">{content.p3}</p>
-          <p>{content.p4}</p>
-        </div>
-        <div className="shadow-lg p-10 bg-slate-200 rounded-lg">
-          <p className="italic font-bold text-lg">{content.p5}</p>
-          <p>{content.p6}</p>
-        </div>
-        <div className="shadow-lg p-10 bg-slate-200 rounded-lg">
-          <p className="italic font-bold text-lg">{content.p7}</p>
-          <p>{content.p8}</p>
-        </div>
-        <div className="shadow-lg p-10 bg-slate-200 rounded-lg">
-          <p className="italic font-bold text-lg">{content.p9}</p>
-          <p>{content.p10}</p>
+    <div className="w-full bg-gray-50 py-12 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto space-y-10">
+        {[
+          [content.p11, content.p12],
+          [content.p1, content.p2],
+          [content.p3, content.p4],
+          [content.p5, content.p6],
+          [content.p7, content.p8],
+          [content.p9, content.p10],
+        ].map(([title, text], i) => (
+          <div
+            key={i}
+            className="bg-white p-6 md:p-10 rounded-xl shadow-md space-y-4"
+          >
+            <p className="text-xl font-semibold italic text-red-700">{title}</p>
+            <p className="text-gray-700 text-lg leading-relaxed">{text}</p>
+          </div>
+        ))}
+
+        <div className="rounded-xl overflow-hidden shadow-md bg-white p-4">
+          <Image
+            src={fig1}
+            alt="Figure showing diabetes data"
+            className="w-full h-auto object-contain rounded-md"
+          />
         </div>
       </div>
     </div>

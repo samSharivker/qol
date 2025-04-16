@@ -44,24 +44,24 @@ export default function About() {
   ];
 
   return (
-    <div className="text-center flex flex-col items-center m-5">
-      <div className="text-center flex flex-col items-center gap-7 p-10 w-full bg-slate-100">
-        {content.map((a, b) => (
+    <div className="w-full bg-gray-50 py-12 px-4 md:px-8">
+      <div className="max-w-5xl mx-auto space-y-10">
+        {content.map((section, i) => (
           <div
-            key={b}
-            className="flex flex-col items-center justify-center gap-3 shadow-lg p-28 bg-slate-200"
+            key={i}
+            className="bg-white rounded-xl shadow-md p-6 md:p-10 space-y-4 border-l-4 border-red-600"
           >
-            {a.map((c, d) =>
-              d == 0 ? (
-                <p
-                  key={d}
-                  className="text-5xl text-center kalam-bold underline"
+            {section.map((text, j) =>
+              j === 0 ? (
+                <h2
+                  key={j}
+                  className="text-2xl md:text-3xl font-bold text-red-800 underline decoration-2 underline-offset-4"
                 >
-                  {c}
-                </p>
+                  {text}
+                </h2>
               ) : (
-                <p key={d} className="text-xl text-center">
-                  - {c}
+                <p key={j} className="text-lg text-gray-700 leading-relaxed">
+                  • {text}
                 </p>
               )
             )}
