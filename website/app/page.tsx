@@ -24,6 +24,7 @@ export default function Home() {
               className="w-full h-auto rounded-2xl shadow-lg"
               priority
             />
+            <p>Source: Direct Media</p>
           </div>
         </div>
       </section>
